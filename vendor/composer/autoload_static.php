@@ -12,6 +12,7 @@ class ComposerStaticInit043dc27cddfd38eae403844657fd17bc
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '04c6c5c2f7095ccf6c481d3e53e1776f' => __DIR__ . '/..' . '/mustangostang/spyc/Spyc.php',
         'bee9632da3ca00a99623b9c35d0c4f8b' => __DIR__ . '/..' . '/laravel/lumen-framework/src/helpers.php',
     );
 
@@ -47,6 +48,7 @@ class ComposerStaticInit043dc27cddfd38eae403844657fd17bc
         ),
         'L' => 
         array (
+            'League\\Csv\\' => 11,
             'Laravel\\Lumen\\' => 14,
         ),
         'I' => 
@@ -153,6 +155,10 @@ class ComposerStaticInit043dc27cddfd38eae403844657fd17bc
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'League\\Csv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/csv/src',
         ),
         'Laravel\\Lumen\\' => 
         array (
@@ -277,6 +283,13 @@ class ComposerStaticInit043dc27cddfd38eae403844657fd17bc
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'SoapBox\\Formatter' => 
+            array (
+                0 => __DIR__ . '/..' . '/soapbox/laravel-formatter/src',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 
