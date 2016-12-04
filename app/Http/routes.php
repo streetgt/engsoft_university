@@ -12,11 +12,33 @@
 */
 
 $app->group(['prefix' => 'api'], function () use ($app) {
-    $app->group(['prefix' => 'user'], function () use ($app) {
-        $app->get('all', ['as' => 'user.all', 'uses' => 'StudentController@index']);
+    $app->group(['prefix' => 'json'], function () use ($app) {
+
+        $app->group(['prefix' => 'student'], function () use ($app) {
+            $app->get('/','StudentController@index');
+            $app->get('{id}','StudentController@getStudent');
+            $app->post('/','StudentController@createStudent');
+            $app->put('{id}','StudentController@updateStudent');
+            $app->delete('{id}','StudentController@deleteStudent');
+        });
+
+        $app->group(['prefix' => 'course'], function () use ($app) {
+            $app->get('/','CourseController@index');
+            $app->get('{id}','CourseController@getCourse');
+            $app->post('/','CourseController@createCourse');
+            $app->put('{id}','CourseController@updateCourse');
+            $app->delete('{id}','CourseController@deleteCourse');
+
+            $app->get('{id}/disciplines','CourseController@getCourseDisciplines');
+        });
+
+        $app->group(['prefix' => 'discipline'], function () use ($app) {
+            $app->get('/','DisciplineController@index');
+            $app->get('{id}','DisciplineController@getDiscipline');
+
+            $app->get('{id}/courses','DisciplineController@getDisciplineCourses');
+        });
     });
 
-    $app->group(['prefix' => 'course'], function () use ($app) {
-        $app->get('all', ['as' => 'course.all', 'uses' => 'CourseController@index']);
-    });
+
 });
