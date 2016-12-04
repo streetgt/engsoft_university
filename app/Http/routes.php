@@ -11,6 +11,12 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
+$app->group(['prefix' => 'api'], function () use ($app) {
+    $app->group(['prefix' => 'user'], function () use ($app) {
+        $app->get('all', ['as' => 'user.all', 'uses' => 'StudentController@index']);
+    });
+
+    $app->group(['prefix' => 'course'], function () use ($app) {
+        $app->get('all', ['as' => 'course.all', 'uses' => 'CourseController@index']);
+    });
 });
