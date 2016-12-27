@@ -53,7 +53,13 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             /* Courses */
             $app->get('{id}/courses','DisciplineController@getDisciplineCourses');
         });
+
+        $app->group(['prefix' => 'room'], function () use ($app) {
+            $app->get('/','RoomController@index');
+            $app->get('{id}','RoomController@getRoom');
+            $app->post('/','RoomController@createRoom');
+            $app->put('{id}','RoomController@updateRoom');
+            $app->delete('{id}','RoomController@deleteRoom');
+        });
     });
-
-
 });

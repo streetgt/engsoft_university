@@ -25,7 +25,14 @@ $factory->define(App\Student::class, function (Faker\Generator $faker) {
         'email'     => $faker->email,
         'ssn'       => $faker->numberBetween(),
         'birthdate' => $faker->date(),
-        'gender'    => $faker->randomElement(['F','M']),
+        'gender'    => $faker->randomElement(['F', 'M']),
         'token'     => $faker->md5,
+    ];
+});
+
+$factory->define(App\Room::class, function (Faker\Generator $faker) {
+    return [
+        'number'   => strtoupper($faker->randomLetter . $faker->randomLetter . $faker->randomLetter),
+        'capacity' => $faker->numberBetween(30, 100),
     ];
 });

@@ -14,9 +14,11 @@ class DisciplineCourseTableSeeder extends Seeder
     {
         $discipline_courses = [
             [9, 1],
+            [10, 1],
             [9, 2],
             [9, 3],
             [9, 4],
+            [10, 4],
             [9, 5],
             [9, 6],
             [9, 7],
@@ -36,6 +38,7 @@ class DisciplineCourseTableSeeder extends Seeder
             [9, 21],
             [9, 22],
             [9, 23],
+            [10, 23],
             [9, 24],
             [9, 25],
             [9, 26],
@@ -48,6 +51,8 @@ class DisciplineCourseTableSeeder extends Seeder
             DB::table('discipline_course')->insert([
                 'course_id'     => $course[0],
                 'discipline_id' => $course[1],
+                'created_at'    => Carbon\Carbon::now(),
+                'updated_at'    => Carbon\Carbon::now(),
             ]);
         }
     }

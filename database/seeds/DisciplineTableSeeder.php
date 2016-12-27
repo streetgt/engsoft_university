@@ -46,8 +46,10 @@ class DisciplineTableSeeder extends Seeder
 
         foreach ($disciplines as $discipline) {
             Discipline::create([
-                'name' => $discipline[0],
-                'ects' => $discipline[1],
+                'name'       => $discipline[0],
+                'ects'       => $discipline[1],
+                'created_at' => Carbon\Carbon::now(),
+                'updated_at' => Carbon\Carbon::now(),
             ]);
         }
     }
