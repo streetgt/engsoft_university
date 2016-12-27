@@ -321,7 +321,11 @@ class ComposerStaticInit043dc27cddfd38eae403844657fd17bc
     );
 
     public static $classMap = array (
+        'CourseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CourseTableSeeder.php',
+        'CreateAppTables' => __DIR__ . '/../..' . '/database/migrations/2016_12_27_183013_create_app_tables.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'DisciplineCourseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/DisciplineCourseTableSeeder.php',
+        'DisciplineTableSeeder' => __DIR__ . '/../..' . '/database/seeds/DisciplineTableSeeder.php',
         'ExampleTest' => __DIR__ . '/../..' . '/tests/ExampleTest.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -851,6 +855,7 @@ class ComposerStaticInit043dc27cddfd38eae403844657fd17bc
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'StudentTableSeeder' => __DIR__ . '/../..' . '/database/seeds/StudentTableSeeder.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
     );

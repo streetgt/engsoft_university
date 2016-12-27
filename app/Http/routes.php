@@ -20,6 +20,19 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             $app->post('/','StudentController@createStudent');
             $app->put('{id}','StudentController@updateStudent');
             $app->delete('{id}','StudentController@deleteStudent');
+
+            /* Grades */
+            $app->get('/{id}/grades','StudentController@getGrades');
+
+            /* Course */
+            $app->group(['prefix' => 'course'], function () use ($app) {
+                $app->post('/enroll','StudentController@enrollCourse');
+            });
+
+            /* Discipline */
+            $app->group(['prefix' => 'discipline'], function () use ($app) {
+                $app->post('/enroll','StudentController@enrollDiscipline');
+            });
         });
 
         $app->group(['prefix' => 'course'], function () use ($app) {
@@ -29,6 +42,7 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             $app->put('{id}','CourseController@updateCourse');
             $app->delete('{id}','CourseController@deleteCourse');
 
+            /* Disciplines */
             $app->get('{id}/disciplines','CourseController@getCourseDisciplines');
         });
 
@@ -36,6 +50,7 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             $app->get('/','DisciplineController@index');
             $app->get('{id}','DisciplineController@getDiscipline');
 
+            /* Courses */
             $app->get('{id}/courses','DisciplineController@getDisciplineCourses');
         });
     });

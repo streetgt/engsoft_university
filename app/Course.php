@@ -12,11 +12,28 @@ class Course extends Model
      */
     protected $table = 'course';
 
+    protected $fillable = [
+        'id',
+        'name',
+        'ects',
+        'description',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function disciplines()
     {
         return $this->belongsToMany(Discipline::class, 'discipline_course');
+    }
+
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'student_course')
+            ->withTimestamps();
     }
 }

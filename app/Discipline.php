@@ -18,4 +18,12 @@ class Discipline extends Model
     {
         return $this->belongsToMany(Course::class, 'discipline_course');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'discipline_course');
+    }
 }

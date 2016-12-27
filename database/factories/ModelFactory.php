@@ -13,7 +13,19 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'name'  => $faker->name,
         'email' => $faker->email,
+    ];
+});
+
+$factory->define(App\Student::class, function (Faker\Generator $faker) {
+    return [
+        'name'      => $faker->firstName,
+        'surname'   => $faker->lastName,
+        'email'     => $faker->email,
+        'ssn'       => $faker->numberBetween(),
+        'birthdate' => $faker->date(),
+        'gender'    => $faker->randomElement(['F','M']),
+        'token'     => $faker->md5,
     ];
 });
