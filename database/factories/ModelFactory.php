@@ -30,6 +30,18 @@ $factory->define(App\Student::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Instructor::class, function (Faker\Generator $faker) {
+    return [
+        'name'     => $faker->firstName,
+        'surname'  => $faker->lastName,
+        'email'    => $faker->email,
+        'hiredate' => $faker->date(),
+        'vatnumber'      => $faker->numberBetween(),
+        'gender'   => $faker->randomElement(['F', 'M']),
+        'token'    => $faker->md5,
+    ];
+});
+
 $factory->define(App\Room::class, function (Faker\Generator $faker) {
     return [
         'number'   => strtoupper($faker->randomLetter . $faker->randomLetter . $faker->randomLetter),
