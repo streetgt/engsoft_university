@@ -157,24 +157,7 @@ class CreateAppTables extends Migration
             $table->timestamps();
 
         });
-
-        Schema::create('teaches', function(Blueprint $table) {
-            $table->integer('instructor_id')->unsigned();
-            $table->integer('classe_id')->unsigned();
-
-            $table->index('instructor_id','teaches_instructor_id_fk_idx');
-            $table->index('classe_id','teaches_section_id_fk_idx');
-
-            $table->foreign('instructor_id')
-                ->references('id')->on('instructor');
-
-            $table->foreign('classe_id')
-                ->references('id')->on('classe');
-
-            $table->timestamps();
-
-        });
-
+        
         Schema::create('student_course', function(Blueprint $table) {
             $table->integer('student_id')->unsigned();
             $table->integer('course_id')->unsigned();
@@ -228,7 +211,6 @@ class CreateAppTables extends Migration
         Schema::drop('classe');
         Schema::drop('schedule');
         Schema::drop('signs');
-        Schema::drop('teaches');
         Schema::drop('student_course');
         Schema::drop('discipline_course');
 
