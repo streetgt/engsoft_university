@@ -1,0 +1,1217 @@
+{
+	"id": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+	"name": "Engenharia Software - Project",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "ce878440-9f39-812b-0160-6da19ed1df46",
+			"name": "Courses",
+			"description": "",
+			"order": [
+				"95ffc8f2-2ff1-9da2-8c65-2eebe1bc36f5",
+				"abd9da1a-5287-1268-9ff3-cb2343dd88fd",
+				"94d3699a-be77-119a-0580-f365424f8045",
+				"3120e968-9329-9520-8b2f-74f10433b679",
+				"f787fec4-6b48-8466-4a6e-79ff042c48e5"
+			],
+			"owner": "570008"
+		},
+		{
+			"id": "6c27e751-2d92-c123-ae39-8e45aee1c890",
+			"name": "Grades",
+			"description": "",
+			"order": [
+				"51df1545-0761-1e0d-ca0e-2e3098573dd7",
+				"2606c14c-e806-6de5-89ba-959088de3e10",
+				"2b1ced32-d084-f055-be6b-bb907779a94e",
+				"7a1c0727-c79e-4805-8c04-d0152deff824",
+				"38c0c292-756e-6895-8ca8-a0b74d81ed5a"
+			],
+			"owner": "570008",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
+		},
+		{
+			"id": "f009a076-b1c1-cf9b-094b-7a4c2f95aa57",
+			"name": "Student",
+			"description": "",
+			"order": [
+				"c27bd7da-6c25-9884-2266-9cf4622ffb01",
+				"b35e7b16-2fb7-b88a-abe1-eaeb7745999e",
+				"a5bfbeb6-6d2d-526c-0ae1-719e189f27c8",
+				"bdb911e2-3583-785a-a2cb-fc65040c997d",
+				"b9ecfb58-86ca-0cbf-e13d-8d56e698531e",
+				"bed86ac0-1334-8b74-3ac1-0e798a93aa59",
+				"f994545b-26fd-a9ec-8dda-3f86a13f8bf7",
+				"dfb4f70c-2e2b-d4ce-af1d-34e0b8c47738",
+				"df736e0a-1af0-49c4-44bf-0b5bbe4f61d0",
+				"7a1e576c-bf15-08e1-ee81-2702537051dc"
+			],
+			"owner": "570008",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
+		},
+		{
+			"id": "1b362157-43a2-dcaf-337e-50fa5c32afbc",
+			"name": "Users",
+			"description": "",
+			"order": [
+				"41b28ec5-0ac9-3882-30f3-b95c50c3d03a",
+				"31b327a0-c897-b2c1-8112-6f7072169c80",
+				"bba29128-942e-2f7a-0032-578ea22dcd4c",
+				"9b49b036-598a-220e-5d22-dcd9d93aa43a"
+			],
+			"owner": "570008"
+		}
+	],
+	"timestamp": 1480815942297,
+	"owner": "570008",
+	"public": false,
+	"requests": [
+		{
+			"id": "2606c14c-e806-6de5-89ba-959088de3e10",
+			"headers": "",
+			"url": "engsoft.dev/api/json/grade?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071326631,
+			"name": "Listar Notas",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "2b1ced32-d084-f055-be6b-bb907779a94e",
+			"headers": "",
+			"url": "engsoft.dev/api/json/grade/1?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071328581,
+			"name": "Listar Nota",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "3120e968-9329-9520-8b2f-74f10433b679",
+			"headers": "",
+			"url": "engsoft.dev/api/json/course/22?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071347954,
+			"name": "Remover Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "31b327a0-c897-b2c1-8112-6f7072169c80",
+			"headers": "",
+			"url": "engsoft.dev/api/json/user/20?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071357819,
+			"name": "Listar User",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "38c0c292-756e-6895-8ca8-a0b74d81ed5a",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/json/grade/2?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "discipline_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "instructor_id",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "New Description",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grade",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071333254,
+			"name": "Editar Nota",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "41b28ec5-0ac9-3882-30f3-b95c50c3d03a",
+			"headers": "",
+			"url": "engsoft.dev/api/json/user?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071355615,
+			"name": "Listar Users",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "51df1545-0761-1e0d-ca0e-2e3098573dd7",
+			"headers": "",
+			"url": "engsoft.dev/api/json/grade?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "discipline_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "instructor_id",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "New Description",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grade",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071324757,
+			"name": "Criar Nota",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "7a1c0727-c79e-4805-8c04-d0152deff824",
+			"headers": "",
+			"url": "engsoft.dev/api/json/grade/1?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071330629,
+			"name": "Remover Nota",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "7a1e576c-bf15-08e1-ee81-2702537051dc",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/2/class?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071276385,
+			"name": "Listar Disciplinas Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "94d3699a-be77-119a-0580-f365424f8045",
+			"headers": "",
+			"url": "engsoft.dev/api/json/course/1?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071345899,
+			"name": "Listar Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "95ffc8f2-2ff1-9da2-8c65-2eebe1bc36f5",
+			"headers": "",
+			"url": "engsoft.dev/api/json/course?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Nome_Curso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ects",
+					"value": "120",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "New Course",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071341910,
+			"name": "Criar Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "9b49b036-598a-220e-5d22-dcd9d93aa43a",
+			"headers": "",
+			"url": "engsoft.dev/api/json/user/100?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071362849,
+			"name": "Remover User",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "a5bfbeb6-6d2d-526c-0ae1-719e189f27c8",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/1?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071305207,
+			"name": "Listar Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "abd9da1a-5287-1268-9ff3-cb2343dd88fd",
+			"headers": "",
+			"url": "engsoft.dev/api/json/course?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071343931,
+			"name": "Listar Cursos",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "b35e7b16-2fb7-b88a-abe1-eaeb7745999e",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071307703,
+			"name": "Listar Estudantes",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "b9ecfb58-86ca-0cbf-e13d-8d56e698531e",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/json/student/69?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Ricardo",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "surname",
+					"value": "Latourrette",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "26333@ufp.edu.pt",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ssn",
+					"value": "12312312312312",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "M",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071300172,
+			"name": "Editar Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "bba29128-942e-2f7a-0032-578ea22dcd4c",
+			"headers": "",
+			"url": "engsoft.dev/api/json/user?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "role",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071360581,
+			"name": "Criar User",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "bdb911e2-3583-785a-a2cb-fc65040c997d",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/70?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071302660,
+			"name": "Remover Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "bed86ac0-1334-8b74-3ac1-0e798a93aa59",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/1/class/enroll?class_id=1&token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071290856,
+			"name": "Inscrever Aluno em Disciplina",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "c27bd7da-6c25-9884-2266-9cf4622ffb01",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071310108,
+			"name": "Criar Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "df736e0a-1af0-49c4-44bf-0b5bbe4f61d0",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/1/course?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071274680,
+			"name": "Listar Cursos Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "dfb4f70c-2e2b-d4ce-af1d-34e0b8c47738",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/1/grade?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071280008,
+			"name": "Listar Notas Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "f787fec4-6b48-8466-4a6e-79ff042c48e5",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/json/course/22?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Editar Curso",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ects",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "Nova Descricao",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071350196,
+			"name": "Editar Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "f994545b-26fd-a9ec-8dda-3f86a13f8bf7",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/course/enroll?id=999&token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483071294627,
+			"name": "Inscrever Aluno em Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		}
+	]
+}

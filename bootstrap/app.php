@@ -60,12 +60,14 @@ $app->singleton(
 */
 
 // $app->middleware([
-//    App\Http\Middleware\ExampleMiddleware::class
+//    App\Http\Middleware\TokenPermissionMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+ $app->routeMiddleware([
+     'token' => App\Http\Middleware\TokenMiddleware::class,
+     'employee' => App\Http\Middleware\EmployeeTokenMiddleware::class,
+     'student' => App\Http\Middleware\StudentTokenMiddleware::class,
+ ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +80,6 @@ $app->singleton(
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 

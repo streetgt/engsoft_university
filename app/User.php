@@ -27,7 +27,7 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
      * @var array
      */
     protected $hidden = [
-        'password',
+        'token',
     ];
 
     /**
@@ -108,7 +108,7 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
     public function isEmployee()
     {
         foreach ($this->roles as $role) {
-            if ($role->role == Role::STUDENT)
+            if ($role->role == Role::EMPLOYEE)
                 return true;
         }
 
@@ -152,6 +152,6 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
      */
     public function classes()
     {
-        return $this->belongsToMany(Classe::class, 'signs', 'student_id')->withTimestamps();
+        return $this->belongsToMany(Classe::class, 'signs', 'class_id', 'student_id')->withTimestamps();
     }
 }

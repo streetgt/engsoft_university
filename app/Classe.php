@@ -10,7 +10,7 @@ class Classe extends Model
     /**
      * @var string
      */
-    protected $table = 'classe';
+    protected $table = 'class';
 
     /**
      * @var array

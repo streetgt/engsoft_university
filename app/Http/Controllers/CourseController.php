@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
@@ -60,6 +61,14 @@ class CourseController extends Controller
     public function deleteCourse($id)
     {
         $course = $this->course->find($id);
+
+        if ($course == null) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Course not found!'
+            ]);
+        }
+
         $course->delete();
 
         return response()->json([
@@ -76,6 +85,14 @@ class CourseController extends Controller
     public function updateCourse(Request $request, $id)
     {
         $course = $this->course->find($id);
+
+        if ($course == null) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Course not found!'
+            ]);
+        }
+
         $course->name = $request->input('name');
         $course->ects = $request->input('ects');
         $course->description = $request->input('description');

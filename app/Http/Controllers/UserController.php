@@ -49,7 +49,14 @@ class UserController extends Controller
      */
     public function createUser(Request $request)
     {
-        $user = $this->user->create($request->all());
+        $user_fields = $request->except('role');
+
+        $user = $this->user->create($user_fields);
+
+        $user->roles()->create([
+            'role' => $request->input('role'),
+        ]);
+
 
         return response()->json($user);
     }

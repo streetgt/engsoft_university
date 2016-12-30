@@ -11,12 +11,12 @@
 |
 */
 
-$app->get('test', 'StudentController@test');
+$app->get('test', ['middleware' => 'permissiontoken', 'name', 'test'], 'StudentController@test');
 
-$app->group(['prefix' => 'api'], function () use ($app) {
+$app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app) {
     $app->group(['prefix' => 'json'], function () use ($app) {
 
-        $app->group(['prefix' => 'user'], function () use ($app) {
+        $app->group(['middleware' => 'employee', 'prefix' => 'user'], function () use ($app) {
             $app->get('/', 'UserController@index');
             $app->get('{id}', 'UserController@getUser');
             $app->post('/', 'UserController@createUser');
@@ -24,12 +24,12 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             $app->delete('{id}', 'UserController@deleteUser');
         });
 
-        $app->group(['prefix' => 'student'], function () use ($app) {
+        $app->group(['middleware' => 'student', 'prefix' => 'student'], function () use ($app) {
             $app->get('/', 'StudentController@index');
             $app->get('{id}', 'StudentController@getStudent');
-            $app->post('/', 'StudentController@createStudent');
+            $app->post('/',  ['middleware' => 'employee'], 'StudentController@createStudent');
             $app->put('{id}', 'UserController@updateUser');
-            $app->delete('{id}', 'StudentController@deleteStudent');
+            $app->delete('{id}', ['middleware' => 'employee'], 'StudentController@deleteStudent');
 
             /* Grades */
             $app->get('/{id}/grade', 'StudentController@getGrades');
@@ -40,15 +40,15 @@ $app->group(['prefix' => 'api'], function () use ($app) {
                 $app->post('/enroll', 'StudentController@enrollCourse');
             });
 
-            /* Discipline */
-            $app->group(['prefix' => '{id}/classe'], function () use ($app) {
+            /* Classes */
+            $app->group(['prefix' => '{id}/class'], function () use ($app) {
                 $app->get('/', 'StudentController@getClasses');
-                $app->post('/enroll', 'StudentController@enrollDiscipline');
+                $app->post('/enroll', 'StudentController@enrollClass');
             });
 
         });
 
-        $app->group(['prefix' => 'course'], function () use ($app) {
+        $app->group(['middleware' => 'employee', 'prefix' => 'course'], function () use ($app) {
             $app->get('/', 'CourseController@index');
             $app->get('{id}', 'CourseController@getCourse');
             $app->post('/', 'CourseController@createCourse');
@@ -59,7 +59,7 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             $app->get('{id}/disciplines', 'CourseController@getCourseDisciplines');
         });
 
-        $app->group(['prefix' => 'discipline'], function () use ($app) {
+        $app->group(['middleware' => 'employee', 'prefix' => 'discipline'], function () use ($app) {
             $app->get('/', 'DisciplineController@index');
             $app->get('{id}', 'DisciplineController@getDiscipline');
 
@@ -67,12 +67,21 @@ $app->group(['prefix' => 'api'], function () use ($app) {
             $app->get('{id}/courses', 'DisciplineController@getDisciplineCourses');
         });
 
-        $app->group(['prefix' => 'room'], function () use ($app) {
+        $app->group(['middleware' => 'employee', 'prefix' => 'room'], function () use ($app) {
             $app->get('/', 'RoomController@index');
             $app->get('{id}', 'RoomController@getRoom');
             $app->post('/', 'RoomController@createRoom');
             $app->put('{id}', 'RoomController@updateRoom');
             $app->delete('{id}', 'RoomController@deleteRoom');
+        });
+
+
+        $app->group(['middleware' => 'employee', 'prefix' => 'grade'], function () use ($app) {
+            $app->get('/', 'GradeController@index');
+            $app->get('{id}', 'GradeController@getGrade');
+            $app->post('/', 'GradeController@createGrade');
+            $app->put('{id}', 'GradeController@updateGrade');
+            $app->delete('{id}', 'GradeController@deleteGrade');
         });
     });
 });

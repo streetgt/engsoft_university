@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classe;
 use App\Course;
 use App\Discipline;
 use App\Role;
@@ -188,7 +189,7 @@ class StudentController extends Controller
             ]);
         }
 
-        if ($student->courses->has($course->id)) {
+        if ($student->courses->contains($course->id)) {
             $student->courses()->detach($course->id);
 
             return response()->json([
@@ -206,45 +207,45 @@ class StudentController extends Controller
     }
 
     /**
-     * Enroll a student on a desired discipline
+     * Enroll a student on a desired class
      *
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function enrollDiscipline(Request $request, $id)
+    public function enrollClass(Request $request, $id)
     {
-        $course = Discipline::find($request->input('discipline_id'));
+        $class = Classe::find($request->input('class_id'));
 
-        if ($course == null) {
+        if ($class == null) {
             return response()->json([
                 'status'  => 404,
-                'message' => 'Discipline not found!'
+                'message' => 'Class not found!'
             ]);
         }
 
         $student = User::find($id);
 
-        if ($student == null) {
+        if ($student == null || ! $student->isStudent()) {
             return response()->json([
-                'status'  => 404,
-                'message' => 'Token is invalid!'
+                'status'  => 400,
+                'message' => 'The Student ID provided is not a student or not found!'
             ]);
         }
 
-        if ($student->courses->has($course->id)) {
-            $student->courses()->detach($course->id);
+        if ($student->classes->contains($class->id)) {
+            $student->classes()->detach($class->id);
 
             return response()->json([
                 'status'  => 500,
-                'message' => 'Student ' . $student->id . ' has been removed from course ' . $course->id,
+                'message' => 'Student ' . $student->id . ' has been removed from class ' . $class->id,
             ]);
         } else {
-            $student->courses()->attach($course->id);
+            $student->classes()->attach($class->id);
 
             return response()->json([
                 'status'  => 500,
-                'message' => 'Student ' . $student->id . ' has added to course ' . $course->id,
+                'message' => 'Student ' . $student->id . ' has added to class ' . $class->id,
             ]);
         }
     }
