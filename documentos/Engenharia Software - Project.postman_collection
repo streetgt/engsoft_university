@@ -32,6 +32,36 @@
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
 		},
 		{
+			"id": "275ad57b-292f-f03c-f3c4-5940d04373d8",
+			"name": "Room",
+			"description": "",
+			"order": [
+				"853ca482-d9ab-26a5-bd36-55ade2170125",
+				"775266b0-8202-efff-b03f-a13c21241036",
+				"842248d3-6f47-bcf5-5d26-c8f7a54be453",
+				"e895da26-8c62-5ccb-adb7-1d09b608e11d",
+				"d97fc098-8bc1-bb51-d6f4-e27bbff2b83c",
+				"e882fa2b-fc0a-c43a-470e-65c772e60b8e"
+			],
+			"owner": "570008",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
+		},
+		{
+			"id": "e0f002c3-967d-73c0-14a0-19321a6437f9",
+			"name": "Schedule",
+			"description": "",
+			"order": [
+				"3c8634b2-c78a-6c92-aaf1-8ef26878e81b",
+				"7ccb8dfe-bc2e-e556-a686-4fd961a8ccf4",
+				"f7c90a49-a4f8-7165-a5f4-1ff39e31e5d2",
+				"7a22637a-9ffe-dff2-a334-035eadccf850",
+				"1075d2b7-44e2-7451-4594-29ccab57e4e7",
+				"b44fc83e-3f63-d32d-f76b-d0483670caf8"
+			],
+			"owner": "570008",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
+		},
+		{
 			"id": "f009a076-b1c1-cf9b-094b-7a4c2f95aa57",
 			"name": "Student",
 			"description": "",
@@ -45,7 +75,8 @@
 				"f994545b-26fd-a9ec-8dda-3f86a13f8bf7",
 				"dfb4f70c-2e2b-d4ce-af1d-34e0b8c47738",
 				"df736e0a-1af0-49c4-44bf-0b5bbe4f61d0",
-				"7a1e576c-bf15-08e1-ee81-2702537051dc"
+				"7a1e576c-bf15-08e1-ee81-2702537051dc",
+				"387e4347-7f77-77ed-5c95-a0cc348dd177"
 			],
 			"owner": "570008",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
@@ -67,6 +98,56 @@
 	"owner": "570008",
 	"public": false,
 	"requests": [
+		{
+			"id": "1075d2b7-44e2-7451-4594-29ccab57e4e7",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/json/schedule/22?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "room_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "class_id",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "day",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "start_hour",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "duration",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483130025604,
+			"name": "Editar Horario",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
 		{
 			"id": "2606c14c-e806-6de5-89ba-959088de3e10",
 			"headers": "",
@@ -273,6 +354,68 @@
 			"responses": []
 		},
 		{
+			"id": "387e4347-7f77-77ed-5c95-a0cc348dd177",
+			"headers": "",
+			"url": "engsoft.dev/api/json/student/1/schedule?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129965667,
+			"name": "Listar Horario Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "38c0c292-756e-6895-8ca8-a0b74d81ed5a",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"url": "engsoft.dev/api/json/grade/2?token={{token}}",
@@ -318,6 +461,57 @@
 			"helperAttributes": {},
 			"time": 1483071333254,
 			"name": "Editar Nota",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "3c8634b2-c78a-6c92-aaf1-8ef26878e81b",
+			"headers": "",
+			"url": "engsoft.dev/api/json/schedule?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "room_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "class_id",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "day",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "start_hour",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "duration",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483130019242,
+			"name": "Criar Horario",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
 			"responses": []
@@ -436,6 +630,68 @@
 			"responses": []
 		},
 		{
+			"id": "775266b0-8202-efff-b03f-a13c21241036",
+			"headers": "",
+			"url": "engsoft.dev/api/json/room?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483128408200,
+			"name": "Listar Salas",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "7a1c0727-c79e-4805-8c04-d0152deff824",
 			"headers": "",
 			"url": "engsoft.dev/api/json/grade/1?token={{token}}",
@@ -512,6 +768,181 @@
 			"helperAttributes": {},
 			"time": 1483071276385,
 			"name": "Listar Disciplinas Estudante",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "7a22637a-9ffe-dff2-a334-035eadccf850",
+			"headers": "",
+			"url": "engsoft.dev/api/json/schedule/22?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129895393,
+			"name": "Remover Horario",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "7ccb8dfe-bc2e-e556-a686-4fd961a8ccf4",
+			"headers": "",
+			"url": "engsoft.dev/api/json/schedule?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129737694,
+			"name": "Listar Horarios",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "842248d3-6f47-bcf5-5d26-c8f7a54be453",
+			"headers": "",
+			"url": "engsoft.dev/api/json/room/1?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129958375,
+			"name": "Listar Sala",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "853ca482-d9ab-26a5-bd36-55ade2170125",
+			"headers": "",
+			"url": "engsoft.dev/api/json/room?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "number",
+					"value": "Ec101",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "capacity",
+					"value": "120",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129950700,
+			"name": "Criar Sala",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
 			"responses": []
@@ -823,6 +1254,68 @@
 			"responses": []
 		},
 		{
+			"id": "b44fc83e-3f63-d32d-f76b-d0483670caf8",
+			"headers": "",
+			"url": "engsoft.dev/api/json/schedule/1/user?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129919439,
+			"name": "Listar Horario Instrutor",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "b9ecfb58-86ca-0cbf-e13d-8d56e698531e",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"url": "engsoft.dev/api/json/student/69?token={{token}}",
@@ -1033,6 +1526,38 @@
 			"responses": []
 		},
 		{
+			"id": "d97fc098-8bc1-bb51-d6f4-e27bbff2b83c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/json/room/22?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "number",
+					"value": "Ec101",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "capacity",
+					"value": "120",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483128474802,
+			"name": "Editar Sala",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "df736e0a-1af0-49c4-44bf-0b5bbe4f61d0",
 			"headers": "",
 			"url": "engsoft.dev/api/json/student/1/course?token={{token}}",
@@ -1157,6 +1682,87 @@
 			"responses": []
 		},
 		{
+			"id": "e882fa2b-fc0a-c43a-470e-65c772e60b8e",
+			"headers": "",
+			"url": "engsoft.dev/api/json/room/1/occupied?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483130060251,
+			"name": "Listar Horario Sala",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "e895da26-8c62-5ccb-adb7-1d09b608e11d",
+			"headers": "",
+			"url": "engsoft.dev/api/json/room/22?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483128435961,
+			"name": "Remover Sala",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "f787fec4-6b48-8466-4a6e-79ff042c48e5",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"url": "engsoft.dev/api/json/course/22?token={{token}}",
@@ -1190,6 +1796,68 @@
 			"helperAttributes": {},
 			"time": 1483071350196,
 			"name": "Editar Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "f7c90a49-a4f8-7165-a5f4-1ff39e31e5d2",
+			"headers": "",
+			"url": "engsoft.dev/api/json/schedule/1?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483129776741,
+			"name": "Listar Horario",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
 			"responses": []

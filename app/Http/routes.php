@@ -32,10 +32,13 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
             $app->delete('{id}', ['middleware' => 'employee'], 'StudentController@deleteStudent');
 
             /* Grades */
-            $app->get('/{id}/grade', 'StudentController@getGrades');
+            $app->group(['prefix' => '{id}/grade'], function () use ($app) {
+                $app->get('/', 'StudentController@getGrades');
+                //$app->get('/{id}/add', 'StudentController@getGrades');
+            });
 
             /* Schedule */
-            $app->get('/{id}/schedule', 'StudentController@getSchedule');
+            $app->get('/{id}/schedule', 'ScheduleController@getUserSchedule');
 
             /* Course */
             $app->group(['prefix' => '{id}/course'], function () use ($app) {
@@ -86,6 +89,16 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
             $app->post('/', 'GradeController@createGrade');
             $app->put('{id}', 'GradeController@updateGrade');
             $app->delete('{id}', 'GradeController@deleteGrade');
+        });
+
+        $app->group(['middleware' => 'student', 'prefix' => 'schedule'], function () use ($app) {
+            $app->get('/', 'ScheduleController@index');
+            $app->get('{id}', 'ScheduleController@getSchedule');
+            $app->post('/', 'ScheduleController@createSchedule');
+            $app->put('{id}', 'ScheduleController@updateSchedule');
+            $app->delete('{id}', 'ScheduleController@deleteSchedule');
+
+            $app->get('{id}/user', 'ScheduleController@getUserSchedule');
         });
     });
 });

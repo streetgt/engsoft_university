@@ -117,28 +117,6 @@ class StudentController extends Controller
     }
 
     /**
-     * Gets the schedule from a Student
-     *
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getSchedule($id)
-    {
-        $student = User::find($id);
-
-        if ($student == null || ! $student->isStudent()) {
-            return response()->json([
-                'status'  => 400,
-                'message' => 'The Student ID provided is not a student or not found!'
-            ]);
-        }
-
-        $schedule = $student->schedule();
-
-        return response()->json($schedule);
-    }
-
-    /**
      * Gets enrolled courses from a Student
      *
      * @param $id

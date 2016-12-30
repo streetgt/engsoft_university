@@ -113,6 +113,7 @@ class CreateAppTables extends Migration
         });
 
         Schema::create('schedule', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('room_id')->unsigned();
             $table->integer('class_id')->unsigned();
             $table->integer('day')->nullable()->default(null);
