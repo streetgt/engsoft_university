@@ -1,22 +1,29 @@
-# Lumen PHP Framework
+# Projeto - Engenharia de software
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+1. **Desenvolver um WS1 (Web Service) que permita aos estudantes:** 
+	1. inscreverem-se em cursos, atualizar os seus dados.
+		* ✔️
+	2. inscreverem-se em unidades curriculares.
+	3. obterem o seu horário.
+	4. verificar a ocupação das salas.
+	5. pesquisar se o docente se encontra disponível num determinado dia e período de tempo.
+	6.  consultar as suas notas.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+2. **Desenvolver um WS2 (Web Service) que permita aos docentes:** 
+	1. consultarem o seu horário.
+	2. obter a lista de presença por unidade curricular num determinado horário.
+	3. lançar notas numa unidade curricular.
+	4. pesquisar salas livres.
+	5. atualizar os seus dados.
 
-## Official Documentation
+3. **Desenvolver um WS3 (Web Service) que permita aos administrativos:** 
+	1. validar as matrículas feitas pelos alunos.
+	2. criar/inserir unidades curriculares.
+	3. associar docentes a unidades curriculares.
+	4. obter as listas de alunos inscritos.
+	5. criar o horário para as unidades curriculares.
+	6. definir salas para as unidades curriculares.
+	7. consultar a listas das notas de um determinado aluno.
+	8. obter a lista de todas as salas livres num determinado período de tempo.
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 # engsoft_university
