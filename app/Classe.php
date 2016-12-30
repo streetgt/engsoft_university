@@ -20,4 +20,14 @@ class Classe extends Model
         'discipline_id',
         'instructor_id',
     ];
+
+    /**
+     * A Class has a schedule
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function schedule()
+    {
+        return $this->hasOne(Schedule::class, 'class_id', 'id');
+    }
 }

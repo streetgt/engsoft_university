@@ -16,9 +16,10 @@ class TokenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //return $next($request);
+        // TODO: ligar token
+
+        return $next($request);
         $token = $request->input('token');
-        dd($token);
         if ($token == null) {
             return response()->json([
                 'status'  => '500',

@@ -16,6 +16,8 @@ class EmployeeTokenMiddleware
      */
     public function handle($request, Closure $next)
     {
+        // TODO: ligar token
+
         return $next($request);
         $token = $request->input('token');
         $user = User::where('token', $token)->first();

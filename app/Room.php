@@ -18,4 +18,14 @@ class Room extends Model
         'number',
         'capacity',
     ];
+
+    /**
+     * A Room belongs to many Schedules
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function schedules()
+    {
+        return $this->belongsToMany(Schedule::class);
+    }
 }

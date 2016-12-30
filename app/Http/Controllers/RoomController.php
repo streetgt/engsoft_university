@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\Schedule;
 
 class RoomController extends Controller
 {
@@ -39,6 +40,13 @@ class RoomController extends Controller
     {
         $room = $this->room->find($id);
 
+        if ($room == null) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Room not found!'
+            ]);
+        }
+
         return response()->json($room);
     }
 
@@ -60,6 +68,14 @@ class RoomController extends Controller
     public function deleteRoom($id)
     {
         $room = $this->room->find($id);
+
+        if ($room == null) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Room not found!'
+            ]);
+        }
+
         $room->delete();
 
         return response()->json([
@@ -76,10 +92,38 @@ class RoomController extends Controller
     public function updateRoom(Request $request, $id)
     {
         $room = $this->room->find($id);
+
+        if ($room == null) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Room not found!'
+            ]);
+        }
+
         $room->number = $request->input('number');
         $room->capacity = $request->input('capacity');
         $room->save();
 
         return response()->json($room);
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getRoomOccupiedInformation($id)
+    {
+        $room = $this->room->find($id);
+
+        if ($room == null) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Room not found!'
+            ]);
+        }
+
+        $schedule = Schedule::with('room','classe')->where('room_id', $room->id)->get();
+
+        return response()->json($schedule);
     }
 }

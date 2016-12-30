@@ -89,8 +89,7 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
      *
      * @return bool
      */
-    public
-    function isInstructor()
+    public function isInstructor()
     {
         foreach ($this->roles as $role) {
             if ($role->role == Role::INSTRUCTOR)
@@ -152,6 +151,36 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
      */
     public function classes()
     {
-        return $this->belongsToMany(Classe::class, 'signs', 'class_id', 'student_id')->withTimestamps();
+        if ($this->isStudent()) {
+            return $this->belongsToMany(Classe::class, 'signs', 'student_id', 'class_id')->withTimestamps();
+        } else if ($this->isInstructor()) {
+            return $this->hasMany(Classe::class, 'instructor_id');
+        }
+
+        return null;
+    }
+
+    /**
+     * Returns the schedule of a user (student or instructor)
+     *
+     * @return mixed|null
+     */
+    public function schedule()
+    {
+//        // Solution 1:
+//        return $query->join('signs','users.id', '=', 'signs.student_id')
+//            ->join('schedule', 'schedule.class_id', '=', 'signs.class_id')
+//            ->select('schedule.*')->get();
+
+        // Solution 2:
+        $classes = $this->classes;
+        if ($classes == null) {
+            return null;
+        }
+        $classes->map(function ($item) {
+            $item->push($item->schedule);
+        });
+
+        return $this->classes;
     }
 }

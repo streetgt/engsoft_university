@@ -11,7 +11,7 @@
 |
 */
 
-$app->get('test', ['middleware' => 'permissiontoken', 'name', 'test'], 'StudentController@test');
+$app->get('test','StudentController@test');
 
 $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app) {
     $app->group(['prefix' => 'json'], function () use ($app) {
@@ -33,6 +33,9 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
 
             /* Grades */
             $app->get('/{id}/grade', 'StudentController@getGrades');
+
+            /* Schedule */
+            $app->get('/{id}/schedule', 'StudentController@getSchedule');
 
             /* Course */
             $app->group(['prefix' => '{id}/course'], function () use ($app) {
@@ -73,8 +76,9 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
             $app->post('/', 'RoomController@createRoom');
             $app->put('{id}', 'RoomController@updateRoom');
             $app->delete('{id}', 'RoomController@deleteRoom');
-        });
 
+            $app->get('{id}/occupied', 'RoomController@getRoomOccupiedInformation');
+        });
 
         $app->group(['middleware' => 'employee', 'prefix' => 'grade'], function () use ($app) {
             $app->get('/', 'GradeController@index');

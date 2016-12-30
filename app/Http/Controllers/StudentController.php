@@ -117,6 +117,28 @@ class StudentController extends Controller
     }
 
     /**
+     * Gets the schedule from a Student
+     *
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getSchedule($id)
+    {
+        $student = User::find($id);
+
+        if ($student == null || ! $student->isStudent()) {
+            return response()->json([
+                'status'  => 400,
+                'message' => 'The Student ID provided is not a student or not found!'
+            ]);
+        }
+
+        $schedule = $student->schedule();
+
+        return response()->json($schedule);
+    }
+
+    /**
      * Gets enrolled courses from a Student
      *
      * @param $id
@@ -169,8 +191,6 @@ class StudentController extends Controller
      */
     public function enrollCourse(Request $request, $id = null)
     {
-        //TODO: Adicionar middleware para verificar permissoes
-
         $course = Course::find($request->input('course_id'));
 
         if ($course == null) {
@@ -253,6 +273,8 @@ class StudentController extends Controller
 
     public function test()
     {
-        return response()->json(\App\Discipline::find(1)->classes);
+        $user = User::find(3);
+
+        return response()->json($user->schedule());
     }
 }

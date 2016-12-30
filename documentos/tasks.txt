@@ -1,0 +1,17 @@
+i)Desenvolver um WS1 (Web Service) que permita aos estudantes: 
+
+inscreverem-se em cursos, atualizar os seus dados, 
+inscreverem-se em unidades curriculares,
+obterem o seu horário, 
+verificar a ocupação das salas, 
+pesquisar se o docente se encontra disponível num determinado dia e período de tempo, consultar as suas notas
+ii) Desenvolver um WS2 (Web Service) que permita aos docentes: 
+consultarem o seu horário
+obter a lista de presença por unidade curricular num determinado horário
+lançar notas numa unidade curricular
+pesquisar salas livres
+atualizar os seus dados
+
+iii) Desenvolver um WS3 (Web Service) que permita aos administrativos: 
+
+validar as matrículas feitas pelos alunos, criar/inserir unidades curriculares, associar docentes a unidades curriculares, obter as listas de alunos inscritos, criar o horário para as unidades curriculares, definir salas para as unidades curriculares, consultar a listas das notas de um determinado aluno, obter a lista de todas as salas livres num determinado período de tempo. A semelhança dos outros serviços web deve criar uma interface que permita testar todos os métodos implementados enviando e apresentando a respetiva informação.

@@ -16,6 +16,8 @@ class StudentTokenMiddleware
      */
     public function handle($request, Closure $next)
     {
+        // TODO: ligar token
+
         return $next($request);
         $id = null;
         if(isset($request->route()[2]['id']))
