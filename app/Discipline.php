@@ -26,4 +26,14 @@ class Discipline extends Model
     {
         return $this->belongsToMany(Student::class, 'discipline_course');
     }
+
+    /**
+     * A Discipline as many classes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function classes()
+    {
+        return $this->hasMany(Classe::class);
+    }
 }

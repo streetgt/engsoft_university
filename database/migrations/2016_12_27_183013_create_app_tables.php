@@ -22,7 +22,7 @@ class CreateAppTables extends Migration
 
         });
 
-        Schema::create('student', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 20)->nullable()->default(null);
             $table->string('surname', 20)->nullable()->default(null);
@@ -36,24 +36,24 @@ class CreateAppTables extends Migration
 
         });
 
-        Schema::create('discipline', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 64)->nullable();
-            $table->smallInteger('ects')->nullable();
+            $table->integer('user_id')->unsigned();
+            $table->integer('role');
+
+            $table->index('user_id', 'user_id_fk_idx');
+
+            $table->foreign('user_id')
+                ->references('id')->on('users');
 
             $table->timestamps();
 
         });
 
-        Schema::create('instructor', function (Blueprint $table) {
+        Schema::create('discipline', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 20)->nullable()->default(null);
-            $table->string('surname', 20)->nullable()->default(null);
-            $table->string('email', 254)->nullable()->default(null);
-            $table->date('hiredate')->nullable()->default(null);
-            $table->string('vatnumber', 60)->nullable()->default(null);
-            $table->enum('gender', ['F', 'M']);
-            $table->string('token');
+            $table->string('name', 64)->nullable();
+            $table->smallInteger('ects')->nullable();
 
             $table->timestamps();
 
@@ -74,7 +74,7 @@ class CreateAppTables extends Migration
             $table->index('instructor_id', 'grade_instructor_id_fk_idx');
 
             $table->foreign('student_id')
-                ->references('id')->on('student');
+                ->references('id')->on('users');
 
             $table->foreign('course_id')
                 ->references('id')->on('course');
@@ -83,7 +83,7 @@ class CreateAppTables extends Migration
                 ->references('id')->on('discipline');
 
             $table->foreign('instructor_id')
-                ->references('id')->on('instructor');
+                ->references('id')->on('users');
 
             $table->timestamps();
 
@@ -100,9 +100,9 @@ class CreateAppTables extends Migration
 
         Schema::create('classe', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 10)->nullable()->default(null);
             $table->integer('discipline_id')->unsigned();
             $table->integer('instructor_id')->unsigned();
-            $table->string('name', 10)->nullable()->default(null);
 
             $table->index('discipline_id', 'classe_discipline_id_fk_idx');
             $table->index('instructor_id', 'classe_instructor_id_fk_idx');
@@ -111,7 +111,7 @@ class CreateAppTables extends Migration
                 ->references('id')->on('discipline');
 
             $table->foreign('instructor_id')
-                ->references('id')->on('instructor');
+                ->references('id')->on('users');
 
             $table->timestamps();
 
@@ -139,18 +139,13 @@ class CreateAppTables extends Migration
 
         Schema::create('signs', function (Blueprint $table) {
             $table->integer('student_id')->unsigned();
-            $table->integer('discipline_id')->unsigned();
             $table->integer('classe_id')->unsigned();
 
             $table->index('student_id', 'signs_student_id_idx');
-            $table->index('discipline_id', 'signs_disicipline_id_fk_idx');
             $table->index('classe_id', 'signs_classe_id_fk_idx');
 
             $table->foreign('student_id')
-                ->references('id')->on('student');
-
-            $table->foreign('discipline_id')
-                ->references('id')->on('discipline');
+                ->references('id')->on('users');
 
             $table->foreign('classe_id')
                 ->references('id')->on('classe');
@@ -170,7 +165,7 @@ class CreateAppTables extends Migration
                 ->references('id')->on('course');
 
             $table->foreign('student_id')
-                ->references('id')->on('student');
+                ->references('id')->on('users');
 
             $table->timestamps();
 
@@ -204,9 +199,9 @@ class CreateAppTables extends Migration
     public function down()
     {
         Schema::drop('course');
-        Schema::drop('student');
+        Schema::drop('users');
+        Schema::drop('roles');
         Schema::drop('discipline');
-        Schema::drop('instructor');
         Schema::drop('grade');
         Schema::drop('room');
         Schema::drop('classe');
