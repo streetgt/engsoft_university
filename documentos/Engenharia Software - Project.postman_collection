@@ -26,7 +26,8 @@
 				"2606c14c-e806-6de5-89ba-959088de3e10",
 				"2b1ced32-d084-f055-be6b-bb907779a94e",
 				"7a1c0727-c79e-4805-8c04-d0152deff824",
-				"38c0c292-756e-6895-8ca8-a0b74d81ed5a"
+				"38c0c292-756e-6895-8ca8-a0b74d81ed5a",
+				"09f510eb-be96-1dbd-bd29-e0a79645511d"
 			],
 			"owner": "570008",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
@@ -41,7 +42,8 @@
 				"842248d3-6f47-bcf5-5d26-c8f7a54be453",
 				"e895da26-8c62-5ccb-adb7-1d09b608e11d",
 				"d97fc098-8bc1-bb51-d6f4-e27bbff2b83c",
-				"e882fa2b-fc0a-c43a-470e-65c772e60b8e"
+				"e882fa2b-fc0a-c43a-470e-65c772e60b8e",
+				"5d010b8a-2f6e-5e09-d1c6-b5bd8a20d293"
 			],
 			"owner": "570008",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
@@ -98,6 +100,57 @@
 	"owner": "570008",
 	"public": false,
 	"requests": [
+		{
+			"id": "09f510eb-be96-1dbd-bd29-e0a79645511d",
+			"headers": "",
+			"url": "engsoft.dev/api/json/instructor/grade?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "discipline_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "instructor_id",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "New Description",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grade",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483147756934,
+			"name": "Criar Nota por Professor",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
 		{
 			"id": "1075d2b7-44e2-7451-4594-29ccab57e4e7",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
@@ -628,6 +681,69 @@
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
 			"responses": []
+		},
+		{
+			"id": "5d010b8a-2f6e-5e09-d1c6-b5bd8a20d293",
+			"headers": "",
+			"url": "engsoft.dev/api/json/room?token={{token}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483128408200,
+			"name": "Listar Salas Livres",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": [],
+			"folder": "275ad57b-292f-f03c-f3c4-5940d04373d8"
 		},
 		{
 			"id": "775266b0-8202-efff-b03f-a13c21241036",
