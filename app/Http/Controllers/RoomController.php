@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Room;
 use App\Schedule;
+use Carbon\Carbon;
 
 class RoomController extends Controller
 {
@@ -122,8 +123,24 @@ class RoomController extends Controller
             ]);
         }
 
-        $schedule = Schedule::with('room','classe')->where('room_id', $room->id)->get();
+        $schedule = Schedule::with('room', 'classe')->where('room_id', $room->id)->get();
 
         return response()->json($schedule);
+    }
+
+    /**
+     * Get a list of free rooms at current hour
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getRoomsFree()
+    {
+        $current_occupied = Schedule::where('start_hour', '>=', Carbon::now()->hour)
+            ->where('start_hour', '<=', Carbon::now()->hour + 'duration')
+            ->pluck('room_id');
+
+        $rooms = Room::whereNotIn('id', $current_occupied)->get();
+
+        return response()->json($rooms);
     }
 }

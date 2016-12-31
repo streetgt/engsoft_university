@@ -67,6 +67,7 @@ $app->singleton(
      'token' => App\Http\Middleware\TokenMiddleware::class,
      'employee' => App\Http\Middleware\EmployeeTokenMiddleware::class,
      'student' => App\Http\Middleware\StudentTokenMiddleware::class,
+     'instructor' => App\Http\Middleware\InstructorTokenMiddleware::class,
  ]);
 
 /*

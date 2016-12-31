@@ -73,17 +73,27 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
             $app->get('{id}/courses', 'DisciplineController@getDisciplineCourses');
         });
 
-        $app->group(['middleware' => 'employee', 'prefix' => 'room'], function () use ($app) {
-            $app->get('/', 'RoomController@index');
-            $app->get('{id}', 'RoomController@getRoom');
-            $app->post('/', 'RoomController@createRoom');
-            $app->put('{id}', 'RoomController@updateRoom');
-            $app->delete('{id}', 'RoomController@deleteRoom');
+        $app->group(['prefix' => 'room'], function () use ($app) {
+            $app->group(['middleware' => 'employee'], function () use ($app) {
+                $app->get('/', 'RoomController@index');
+                $app->get('{id}', 'RoomController@getRoom');
+                $app->post('/', 'RoomController@createRoom');
+                $app->put('{id}', 'RoomController@updateRoom');
+                $app->delete('{id}', 'RoomController@deleteRoom');
 
-            $app->get('{id}/occupied', 'RoomController@getRoomOccupiedInformation');
+                $app->get('{id}/occupied', 'RoomController@getRoomOccupiedInformation');
+            });
+
+            $app->group(['middleware' => 'instructor'], function () use ($app) {
+                $app->get('free', 'RoomController@getRoomsFree');
+            });
         });
 
-        $app->group(['middleware' => 'employee', 'prefix' => 'grade'], function () use ($app) {
+        $app->group(['middleware' => 'instructor', 'prefix' => 'instructor'], function () use ($app) {
+            $app->post('grade', 'GradeController@createGrade');
+        });
+
+        $app->group(['middleware' => 'instructor', 'prefix' => 'grade'], function () use ($app) {
             $app->get('/', 'GradeController@index');
             $app->get('{id}', 'GradeController@getGrade');
             $app->post('/', 'GradeController@createGrade');

@@ -53,17 +53,28 @@ class ScheduleController extends Controller
     /**
      * Gets the schedule from a User
      *
+     * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getUserSchedule($id)
+    public function getUserSchedule(Request $request, $id)
     {
+        $sent_user = User::where('token', $request->input('token'))->first();
+
         $user = User::find($id);
 
         if ($user == null) {
             return response()->json([
                 'status'  => 400,
                 'message' => 'The ID provided is not a valid or not found!'
+            ]);
+        }
+
+        if($sent_user->isInstructor() && $user->isStudent())
+        {
+            return response()->json([
+                'status'  => 400,
+                'message' => 'You don\'t have permission to check a student schedule!'
             ]);
         }
 

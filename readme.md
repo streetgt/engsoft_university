@@ -10,7 +10,7 @@
 	4. verificar a ocupação das salas.
 	    * ✔ - Faz o inverso, ve o horario de ocupação da sala.️
 	5. pesquisar se o docente se encontra disponível num determinado dia e período de tempo.
-	    * X - Pelo contrario, ve o horario do docente
+	    * ✔ - Faz o inverso, ve o horario do docente
 	6. consultar as suas notas.
 	    * ✔    
 	7. Adicional.
@@ -20,8 +20,11 @@
 	1. consultarem o seu horário.
 	    * ✔
 	2. obter a lista de presença por unidade curricular num determinado horário.
+	    * X - Presenças não implementado
 	3. lançar notas numa unidade curricular.
+	    * ✔
 	4. pesquisar salas livres.
+	    * ✔ - Retorna todas as salas livres baseado na hora atual.
 	5. atualizar os seus dados.
 	    * ✔
 

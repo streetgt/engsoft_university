@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Classe;
 use App\Course;
-use App\Discipline;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
