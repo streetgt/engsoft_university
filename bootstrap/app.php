@@ -59,9 +59,9 @@ $app->singleton(
 |
 */
 
-// $app->middleware([
-//    App\Http\Middleware\TokenPermissionMiddleware::class
-// ]);
+ $app->middleware([
+    App\Http\Middleware\XmlResponseMiddleware::class
+ ]);
 
  $app->routeMiddleware([
      'token' => App\Http\Middleware\TokenMiddleware::class,
