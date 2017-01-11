@@ -418,6 +418,7 @@ URL: /api/grade/{id}
 `App\Http\Controllers\GradeController@getGrade`
 
 Parametros | Informação
+-------- | ---
 {id} | requerido, integer
 
 URL: /api/grade
