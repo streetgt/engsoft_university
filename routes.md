@@ -247,6 +247,7 @@ URL: /api/discipline/{id}
 `PUT`
 `App\Http\Controllers\DisciplineController@updateDiscipline`
 
+Parametros | Informação
 -------- | ---
 {id} | requerido, integer
 name | string
