@@ -5,6 +5,10 @@ namespace App\Http\Middleware;
 use App\User;
 use Closure;
 
+/**
+ * Class EmployeeTokenMiddleware
+ * @package App\Http\Middleware
+ */
 class EmployeeTokenMiddleware
 {
     /**
@@ -16,9 +20,11 @@ class EmployeeTokenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // TODO: ligar token
-
+        /**
+         * @todo: apagar a seguinte linha para testar os tokens
+         */
         return $next($request);
+
         $token = $request->input('token');
         $user = User::where('token', $token)->first();
 

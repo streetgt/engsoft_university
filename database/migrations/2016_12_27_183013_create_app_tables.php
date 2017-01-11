@@ -3,6 +3,11 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Migration that creates the tables
+ *
+ * Class CreateAppTables
+ */
 class CreateAppTables extends Migration
 {
     /**
@@ -12,6 +17,9 @@ class CreateAppTables extends Migration
      */
     public function up()
     {
+        /**
+         * Creates Table course
+         */
         Schema::create('course', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 64);
@@ -22,6 +30,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table users
+         */
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 20)->nullable()->default(null);
@@ -36,6 +47,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table roles
+         */
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -50,6 +64,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table discipline
+         */
         Schema::create('discipline', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 64)->nullable();
@@ -59,6 +76,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table grade
+         */
         Schema::create('grade', function (Blueprint $table) {
             $table->integer('student_id')->unsigned();
             $table->integer('discipline_id')->unsigned();
@@ -84,6 +104,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table room
+         */
         Schema::create('room', function (Blueprint $table) {
             $table->increments('id');
             $table->string('number', 10)->nullable()->default(null);
@@ -93,6 +116,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table class
+         */
         Schema::create('class', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 10)->nullable()->default(null);
@@ -112,6 +138,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table schedule
+         */
         Schema::create('schedule', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('room_id')->unsigned();
@@ -133,6 +162,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table signs
+         */
         Schema::create('signs', function (Blueprint $table) {
             $table->integer('student_id')->unsigned();
             $table->integer('class_id')->unsigned();
@@ -150,6 +182,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table student_course
+         */
         Schema::create('student_course', function (Blueprint $table) {
             $table->integer('student_id')->unsigned();
             $table->integer('course_id')->unsigned();
@@ -167,6 +202,9 @@ class CreateAppTables extends Migration
 
         });
 
+        /**
+         * Creates Table discipline_course
+         */
         Schema::create('discipline_course', function (Blueprint $table) {
             $table->integer('course_id')->unsigned();
             $table->integer('discipline_id')->unsigned();
@@ -183,7 +221,6 @@ class CreateAppTables extends Migration
             $table->timestamps();
 
         });
-
 
     }
 

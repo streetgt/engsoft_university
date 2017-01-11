@@ -1,0 +1,12 @@
+title: Projeto de Engenharia de Software - 2016/2017
+
+source:
+    - app
+    - database/migrations
+    - database/seeds
+
+destination: ./documentos/api
+
+templateTheme: bootstrap
+
+todo:

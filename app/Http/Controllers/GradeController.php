@@ -7,6 +7,10 @@ use App\User;
 use App\Grade;
 use Illuminate\Http\Request;
 
+/**
+ * Class GradeController
+ * @package App\Http\Controllers
+ */
 class GradeController extends Controller
 {
     /**
@@ -25,6 +29,8 @@ class GradeController extends Controller
     }
 
     /**
+     * Display all Grades
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
@@ -37,6 +43,8 @@ class GradeController extends Controller
     }
 
     /**
+     * Display a Grade
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -57,6 +65,8 @@ class GradeController extends Controller
     }
 
     /**
+     * Creates a Grade
+     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -117,7 +127,7 @@ class GradeController extends Controller
     }
 
     /**
-     * Deletes a grade
+     * Deletes a Grade
      *
      * @param Request $request
      * @param $id
@@ -157,6 +167,8 @@ class GradeController extends Controller
     }
 
     /**
+     * Updates a Grade
+     *
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse

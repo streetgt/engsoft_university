@@ -1,17 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
+/**
+ * Web Services Routes
+ */
 
-$app->get('test','StudentController@test');
+$app->get('test', 'StudentController@test');
 
 $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app) {
 
@@ -26,9 +19,9 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
     $app->group(['middleware' => 'student', 'prefix' => 'student'], function () use ($app) {
         $app->get('/', 'StudentController@index');
         $app->get('{id}', 'StudentController@getStudent');
-        $app->post('/',  ['middleware' => 'employee'], 'StudentController@createStudent');
+        $app->post('/', 'StudentController@createStudent');
         $app->put('{id}', 'UserController@updateUser');
-        $app->delete('{id}', ['middleware' => 'employee'], 'StudentController@deleteStudent');
+        $app->delete('{id}', 'StudentController@deleteStudent');
 
         /* Grades */
         $app->group(['prefix' => '{id}/grade'], function () use ($app) {
@@ -67,9 +60,24 @@ $app->group(['middleware' => 'token', 'prefix' => 'api'], function () use ($app)
     $app->group(['middleware' => 'employee', 'prefix' => 'discipline'], function () use ($app) {
         $app->get('/', 'DisciplineController@index');
         $app->get('{id}', 'DisciplineController@getDiscipline');
+        $app->post('/', 'DisciplineController@createDiscipline');
+        $app->put('{id}', 'DisciplineController@updateDiscipline');
+        $app->delete('{id}', 'DisciplineController@deleteDiscipline');
 
-        /* Courses */
+        /* Course */
+        $app->group(['prefix' => '{id_discipline}/course'], function () use ($app) {
+            $app->post('{id_course}/associate', 'DisciplineController@associateCourse');
+            $app->post('{id_course}/disassociate', 'DisciplineController@disassociateCourse');
+        });
         $app->get('{id}/courses', 'DisciplineController@getDisciplineCourses');
+    });
+
+    $app->group(['middleware' => 'employee', 'prefix' => 'class'], function () use ($app) {
+        $app->get('/', 'ClassController@index');
+        $app->get('{id}', 'ClassController@getClass');
+        $app->post('/', 'ClassController@createClass');
+        $app->put('{id}', 'ClassController@updateClass');
+        $app->delete('{id}', 'ClassController@deleteClass');
     });
 
     $app->group(['prefix' => 'room'], function () use ($app) {

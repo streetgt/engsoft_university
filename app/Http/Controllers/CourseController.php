@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Course;
 use Illuminate\Http\Request;
 
+/**
+ * Class CourseController
+ * @package App\Http\Controllers
+ */
 class CourseController extends Controller
 {
     /**
@@ -23,6 +27,8 @@ class CourseController extends Controller
     }
 
     /**
+     * Display all Courses
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
@@ -33,6 +39,8 @@ class CourseController extends Controller
     }
 
     /**
+     * Display a specified Course
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -44,6 +52,8 @@ class CourseController extends Controller
     }
 
     /**
+     * Creates a Course
+     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -55,6 +65,8 @@ class CourseController extends Controller
     }
 
     /**
+     * Deletes a Course
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -78,6 +90,8 @@ class CourseController extends Controller
     }
 
     /**
+     * Updates a Course
+     *
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
@@ -102,6 +116,8 @@ class CourseController extends Controller
     }
 
     /**
+     * Displays all Disciplines associated with a Course
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */

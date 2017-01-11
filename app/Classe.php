@@ -5,14 +5,22 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 
+/**
+ * Class Classe
+ * @package App
+ */
 class Classe extends Model
 {
     /**
+     * Table name
+     *
      * @var string
      */
     protected $table = 'class';
 
     /**
+     * The attributes that are mass assignable.
+     *
      * @var array
      */
     protected $fillable = [

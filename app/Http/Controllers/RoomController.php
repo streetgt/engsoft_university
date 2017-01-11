@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use App\Room;
 use App\Schedule;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
+/**
+ * Class RoomController
+ * @package App\Http\Controllers
+ */
 class RoomController extends Controller
 {
     /**
@@ -24,6 +29,8 @@ class RoomController extends Controller
     }
 
     /**
+     * Display all Rooms
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
@@ -34,6 +41,8 @@ class RoomController extends Controller
     }
 
     /**
+     * Display a Room
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -52,6 +61,8 @@ class RoomController extends Controller
     }
 
     /**
+     * Creates a Room
+     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -63,6 +74,8 @@ class RoomController extends Controller
     }
 
     /**
+     * Deletes a Room
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -86,6 +99,8 @@ class RoomController extends Controller
     }
 
     /**
+     * Updates a Room
+     *
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
@@ -109,6 +124,8 @@ class RoomController extends Controller
     }
 
     /**
+     * Displays information about a Room based on Schedule
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */

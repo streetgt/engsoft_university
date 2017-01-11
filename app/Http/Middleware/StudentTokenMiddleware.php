@@ -5,6 +5,10 @@ namespace App\Http\Middleware;
 use App\User;
 use Closure;
 
+/**
+ * Class StudentTokenMiddleware
+ * @package App\Http\Middleware
+ */
 class StudentTokenMiddleware
 {
     /**
@@ -16,9 +20,11 @@ class StudentTokenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // TODO: ligar token
-
+        /**
+         * @todo: apagar a seguinte linha para testar os tokens
+         */
         return $next($request);
+
         $id = null;
         if(isset($request->route()[2]['id']))
         {

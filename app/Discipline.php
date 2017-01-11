@@ -4,12 +4,27 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Discipline
+ * @package App
+ */
 class Discipline extends Model
 {
     /**
+     * Table name
+     *
      * @var string
      */
     protected $table = 'discipline';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'ects', 'course_id'
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -3,6 +3,9 @@
 use App\Discipline;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class DisciplineTableSeeder
+ */
 class DisciplineTableSeeder extends Seeder
 {
     /**

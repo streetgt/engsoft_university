@@ -8,10 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class User extends Model //implements AuthenticatableContract, AuthorizableContract
+class User extends Model
 {
-    //use Authenticatable, Authorizable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +20,7 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes excluded from the model's JSON output.
      *
      * @var array
      */
@@ -168,6 +166,7 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
     public function schedule()
     {
 //        // Solution 1:
+//        Using SQL
 //        return $query->join('signs','users.id', '=', 'signs.student_id')
 //            ->join('schedule', 'schedule.class_id', '=', 'signs.class_id')
 //            ->select('schedule.*')->get();
@@ -177,6 +176,7 @@ class User extends Model //implements AuthenticatableContract, AuthorizableContr
         if ($classes == null) {
             return null;
         }
+        // Using Collection
         $classes->map(function ($item) {
             $item->push($item->schedule);
         });

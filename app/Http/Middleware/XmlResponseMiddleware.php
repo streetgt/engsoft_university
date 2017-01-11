@@ -6,6 +6,10 @@ use SoapBox\Formatter\Formatter;
 use App\User;
 use Closure;
 
+/**
+ * Class XmlResponseMiddleware
+ * @package App\Http\Middleware
+ */
 class XmlResponseMiddleware
 {
     /**

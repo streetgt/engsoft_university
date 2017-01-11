@@ -7,7 +7,12 @@ use App\Course;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use SoapBox\Formatter\Formatter;
 
+/**
+ * Class StudentController
+ * @package App\Http\Controllers
+ */
 class StudentController extends Controller
 {
     /**
@@ -25,6 +30,8 @@ class StudentController extends Controller
     }
 
     /**
+     * Display all Students
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
@@ -35,6 +42,8 @@ class StudentController extends Controller
     }
 
     /**
+     * Display a Student
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -53,11 +62,15 @@ class StudentController extends Controller
     }
 
     /**
+     * Create a Student
+     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function createStudent(Request $request)
     {
+        $this->middleware('employee');
+
         $student = $this->user->create($request->all());
 
         $student->roles()->create([
@@ -68,11 +81,15 @@ class StudentController extends Controller
     }
 
     /**
+     * Deletes a Student
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function deleteStudent($id)
     {
+        $this->middleware('employee');
+
         $student = $this->user->find($id);
 
         if ($student == null || ! $student->isStudent()) {
@@ -94,7 +111,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Gets the grades from a Student
+     * Gets the Grades from a Student
      *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
@@ -116,7 +133,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Gets enrolled courses from a Student
+     * Gets enrolled Courses from a Student
      *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
@@ -248,10 +265,17 @@ class StudentController extends Controller
     }
 
 
+    /**
+     * Method to test dummy stuff
+     *
+     * @return mixed
+     */
     public function test()
     {
         $user = User::find(3);
 
-        return response()->json($user->schedule());
+        $f = Formatter::make($user, Formatter::XML);
+
+        return $f->toXml();
     }
 }

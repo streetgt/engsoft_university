@@ -6,6 +6,10 @@ use App\User;
 use App\Schedule;
 use Illuminate\Http\Request;
 
+/**
+ * Class ScheduleController
+ * @package App\Http\Controllers
+ */
 class ScheduleController extends Controller
 {
     /**
@@ -23,6 +27,8 @@ class ScheduleController extends Controller
     }
 
     /**
+     * Display all Schedules
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
@@ -33,6 +39,8 @@ class ScheduleController extends Controller
     }
 
     /**
+     * Displays a Schedule
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -51,7 +59,7 @@ class ScheduleController extends Controller
     }
 
     /**
-     * Gets the schedule from a User
+     * Gets the Schedule from a give User id
      *
      * @param Request $request
      * @param $id
@@ -84,6 +92,8 @@ class ScheduleController extends Controller
     }
 
     /**
+     * Creates a Schedule
+     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -95,6 +105,8 @@ class ScheduleController extends Controller
     }
 
     /**
+     * Deletes a Schedule
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -118,6 +130,8 @@ class ScheduleController extends Controller
     }
 
     /**
+     * Updates a Schedule
+     *
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse

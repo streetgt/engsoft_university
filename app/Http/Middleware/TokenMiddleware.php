@@ -5,6 +5,10 @@ namespace App\Http\Middleware;
 use App\User;
 use Closure;
 
+/**
+ * Class TokenMiddleware
+ * @package App\Http\Middleware
+ */
 class TokenMiddleware
 {
     /**
@@ -16,9 +20,11 @@ class TokenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // TODO: ligar token
-
+        /**
+         * @todo: apagar a seguinte linha para testar os tokens
+         */
         return $next($request);
+
         $token = $request->input('token');
         if ($token == null) {
             return response()->json([

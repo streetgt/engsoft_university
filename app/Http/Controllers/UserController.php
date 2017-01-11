@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
+/**
+ * Class UserController
+ * @package App\Http\Controllers
+ */
 class UserController extends Controller
 {
     /**
@@ -22,6 +26,8 @@ class UserController extends Controller
     }
 
     /**
+     * Display all Users
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
@@ -32,6 +38,8 @@ class UserController extends Controller
     }
 
     /**
+     * Display a User
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -44,6 +52,8 @@ class UserController extends Controller
     }
 
     /**
+     * Creates a User
+     *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -62,6 +72,8 @@ class UserController extends Controller
     }
 
     /**
+     * Deletes a User
+     *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -78,6 +90,8 @@ class UserController extends Controller
     }
 
     /**
+     * Updates a User
+     *
      * @param Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse

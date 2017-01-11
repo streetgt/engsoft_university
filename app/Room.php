@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     /**
+     * Table name
+     *
      * @var string
      */
     protected $table = 'room';
 
     /**
+     * The attributes that are mass assignable.
+     *
      * @var array
      */
     protected $fillable = [

@@ -3,6 +3,9 @@
 use App\Stunet;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class RoomTableSeeder
+ */
 class RoomTableSeeder extends Seeder
 {
     /**
