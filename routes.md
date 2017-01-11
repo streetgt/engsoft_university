@@ -9,7 +9,7 @@ URL: /api/user
 URL: /api/user/{id}
 `GET`
 `App\Http\Controllers\UserController@getUser`
-token,employee
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -17,6 +17,7 @@ id | requerido, integer
 URL: /api/user
 `POST`
 `App\Http\Controllers\UserController@createUser`
+
 Parametros | Informação
 -------- | ---
 name | requirido, string
@@ -29,6 +30,7 @@ role | requirido, 0-2
 URL: /api/user/{id}
 `PUT`
 `App\Http\Controllers\UserController@updateUser`
+
 Parametros | Informação
 -------- | ---
 name | string
@@ -41,6 +43,7 @@ role | integer, 0-2
 URL: /api/user/{id}
 `DELETE`
 `App\Http\Controllers\UserController@deleteUser`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -52,6 +55,7 @@ URL: /api/student
 URL: /api/student/{id}
 `GET`
 `App\Http\Controllers\StudentController@getStudent`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -59,6 +63,7 @@ id | requerido, integer
 URL: /api/student
 `POST`
 `App\Http\Controllers\StudentController@createStudent`
+
 Parametros | Informação
 -------- | ---
 name | string
@@ -70,6 +75,7 @@ gender | enum, F ou M
 URL: /api/student/{id}
 `PUT`
 `App\Http\Controllers\UserController@updateUser`
+
 Parametros | Informação
 -------- | ---
 name | string
@@ -81,6 +87,7 @@ gender | enum, F ou M
 URL: /api/student/{id}
 `DELETE`
 `App\Http\Controllers\StudentController@deleteStudent`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -88,6 +95,7 @@ id | requerido, integer
 URL: /api/student/{id}/grade
 `GET`
 `App\Http\Controllers\StudentController@getGrades`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -104,6 +112,7 @@ URL: /api/student/{id}/course
 `GET`
 `App\Http\Controllers\StudentController@getCourses`
 token,student
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -111,6 +120,7 @@ id | requerido, integer
 URL: /api/student/{id}/course/enroll
 `POST`
 `App\Http\Controllers\StudentController@enrollCourse`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -119,6 +129,7 @@ course_id | requerido, integer ($_GET)
 URL: /api/student/{id}/class
 `GET`
 `App\Http\Controllers\StudentController@getClasses`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -126,6 +137,7 @@ id | requerido, integer
 URL: /api/student/{id}/class/enroll
 `POST`
 `App\Http\Controllers\StudentController@enrollClass`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -138,6 +150,7 @@ URL: /api/course
 URL: /api/course/{id}
 `GET`
 `App\Http\Controllers\CourseController@getCourse`
+
 Parametros | Informação
 -------- | ---
 id | requerido, integer
@@ -146,6 +159,7 @@ URL: /api/course
 `POST`
 `App\Http\Controllers\CourseController@createCourse`
 token,employee
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -156,6 +170,7 @@ description | string
 URL: /api/course/{id}
 `PUT`
 `App\Http\Controllers\CourseController@updateCourse`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -166,6 +181,7 @@ description | string
 URL: /api/course/{id}
 `DELETE`
 `App\Http\Controllers\CourseController@deleteCourse`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -173,6 +189,7 @@ Parametros | Informação
 URL: /api/course/{id}/disciplines
 `GET`
 `App\Http\Controllers\CourseController@getCourseDisciplines`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -184,14 +201,15 @@ URL: /api/discipline
 URL: /api/discipline/{id}
 `GET`
 `App\Http\Controllers\DisciplineController@getDiscipline`
-token,employee
+
+Parametros | Informação
 -------- | ---
 {id} | requerido, integer
 
 URL: /api/discipline
 `POST`
 `App\Http\Controllers\DisciplineController@createDiscipline`
-token,employee
+
 Parametros | Informação
 -------- | ---
 name | string
@@ -201,7 +219,7 @@ course_id | requerido, integer
 URL: /api/discipline/{id}
 `PUT`
 `App\Http\Controllers\DisciplineController@updateDiscipline`
-Parametros | Informação
+
 -------- | ---
 {id} | requerido, integer
 name | string
@@ -211,6 +229,7 @@ course_id | integer
 URL: /api/discipline/{id}
 `DELETE`
 `App\Http\Controllers\DisciplineController@deleteDiscipline`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -218,6 +237,7 @@ Parametros | Informação
 URL: /api/discipline/{id_discipline}/course/{id_course}/associate
 `POST`
 `App\Http\Controllers\DisciplineController@associateCourse`
+
 Parametros | Informação
 -------- | ---
 {id_discipline} | requerido, integer
@@ -226,6 +246,7 @@ Parametros | Informação
 URL: /api/discipline/{id_discipline}/course/{id_course}/disassociate
 `POST`
 `App\Http\Controllers\DisciplineController@disassociateCourse`
+
 Parametros | Informação
 -------- | ---
 {id_discipline} | requerido, integer
@@ -234,6 +255,7 @@ Parametros | Informação
 URL: /api/discipline/{id}/courses
 `GET`
 `App\Http\Controllers\DisciplineController@getDisciplineCourses`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -252,6 +274,7 @@ Parametros | Informação
 URL: /api/class
 `POST`
 `App\Http\Controllers\ClassController@createClass`
+
 Parametros | Informação
 -------- | ---
 name | string
@@ -261,6 +284,7 @@ instructor_id | requerido, integer
 URL: /api/class/{id}
 `PUT`
 `App\Http\Controllers\ClassController@updateClass`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer
@@ -271,6 +295,7 @@ instructor_id | integer
 URL: /api/class/{id}
 `DELETE`
 `App\Http\Controllers\ClassController@deleteClass`
+
 Parametros | Informação
 -------- | ---
 {id} | requerido, integer

@@ -5,6 +5,20 @@
 	"order": [],
 	"folders": [
 		{
+			"id": "84a9e004-8cbc-3362-b229-6d916ef44131",
+			"name": "Classes",
+			"description": "",
+			"order": [
+				"2644c050-a41e-6f1d-3a3a-dfe17311886e",
+				"bcf1eb55-7e1e-9654-d490-3c2e24a9ff8f",
+				"b4557996-cba2-81e1-e461-301d5d717728",
+				"272dad7c-abc4-0c94-607f-293364fc275f",
+				"636566b0-5ee6-6490-6cf2-9a2030e180f4"
+			],
+			"owner": "570008",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
+		},
+		{
 			"id": "ce878440-9f39-812b-0160-6da19ed1df46",
 			"name": "Courses",
 			"description": "",
@@ -16,6 +30,22 @@
 				"f787fec4-6b48-8466-4a6e-79ff042c48e5"
 			],
 			"owner": "570008"
+		},
+		{
+			"id": "efe8489c-693f-2bd7-a394-d14896f2e9eb",
+			"name": "Disciplines",
+			"description": "",
+			"order": [
+				"9ea4081b-9928-8e2d-bd53-678692c911be",
+				"8d30ca14-c644-2ff6-0734-1558bef18cc1",
+				"8f3fd8ac-00d9-0839-ba56-163982dedd8e",
+				"f0a96c66-c3c1-e852-4faf-9c097b542e64",
+				"7126bf79-707e-1ae8-b08f-aa3455b3a594",
+				"7d50a519-520b-8d85-245d-be413f14c64d",
+				"34731f58-2782-70d3-c5f3-54aa887d53f8"
+			],
+			"owner": "570008",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a"
 		},
 		{
 			"id": "6c27e751-2d92-c123-ae39-8e45aee1c890",
@@ -264,6 +294,63 @@
 			"responses": []
 		},
 		{
+			"id": "2644c050-a41e-6f1d-3a3a-dfe17311886e",
+			"headers": "",
+			"url": "engsoft.dev/api/class?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Sigla Turma",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "discipline_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "instructor_id",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484176341361,
+			"name": "Criar Turma",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "272dad7c-abc4-0c94-607f-293364fc275f",
+			"headers": "",
+			"url": "engsoft.dev/api/class/22?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484162509934,
+			"name": "Remover Turma",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "2b1ced32-d084-f055-be6b-bb907779a94e",
 			"headers": "",
 			"url": "engsoft.dev/api/grade/1?token={{token}}&type=json",
@@ -407,6 +494,45 @@
 			"responses": []
 		},
 		{
+			"id": "34731f58-2782-70d3-c5f3-54aa887d53f8",
+			"headers": "",
+			"url": "engsoft.dev/api/discipline/1/course/10/disassociate?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Nome Disciplina",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ects",
+					"value": "120",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "course_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484162569630,
+			"name": "Dissociar Disciplina de Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "387e4347-7f77-77ed-5c95-a0cc348dd177",
 			"headers": "",
 			"url": "engsoft.dev/api/student/1/schedule?token={{token}}&type=json",
@@ -462,7 +588,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1484001696210,
+			"time": 1484149909734,
 			"name": "Listar Horario Estudante",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
@@ -745,6 +871,76 @@
 			"responses": []
 		},
 		{
+			"id": "636566b0-5ee6-6490-6cf2-9a2030e180f4",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/class/21?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Sigla Turma",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "discipline_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "instructor_id",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484162565012,
+			"name": "Editar Turma",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "7126bf79-707e-1ae8-b08f-aa3455b3a594",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "engsoft.dev/api/discipline/22?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Editar Disciplina",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ects",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484160464053,
+			"name": "Editar Disciplina",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "775266b0-8202-efff-b03f-a13c21241036",
 			"headers": "",
 			"url": "engsoft.dev/api/room?token={{token}}&type=json",
@@ -969,6 +1165,33 @@
 			"responses": []
 		},
 		{
+			"id": "7d50a519-520b-8d85-245d-be413f14c64d",
+			"headers": "",
+			"url": "engsoft.dev/api/discipline/1/course/10/associate?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "course_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484161646067,
+			"name": "Associar Disciplina a Curso",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "842248d3-6f47-bcf5-5d26-c8f7a54be453",
 			"headers": "",
 			"url": "engsoft.dev/api/room/1?token={{token}}&type=json",
@@ -1058,6 +1281,130 @@
 			"helperAttributes": {},
 			"time": 1484001457411,
 			"name": "Criar Sala",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "8d30ca14-c644-2ff6-0734-1558bef18cc1",
+			"headers": "",
+			"url": "engsoft.dev/api/discipline?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484159721405,
+			"name": "Listar Disciplinas",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "8f3fd8ac-00d9-0839-ba56-163982dedd8e",
+			"headers": "",
+			"url": "engsoft.dev/api/discipline/1?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484159805187,
+			"name": "Listar Disciplina",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
 			"responses": []
@@ -1178,6 +1525,45 @@
 			"helperAttributes": {},
 			"time": 1484001714347,
 			"name": "Remover User",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
+			"id": "9ea4081b-9928-8e2d-bd53-678692c911be",
+			"headers": "",
+			"url": "engsoft.dev/api/discipline?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Nome Disciplina",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ects",
+					"value": "120",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "course_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484159843816,
+			"name": "Criar Disciplina",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
 			"responses": []
@@ -1431,6 +1817,68 @@
 			"responses": []
 		},
 		{
+			"id": "b4557996-cba2-81e1-e461-301d5d717728",
+			"headers": "",
+			"url": "engsoft.dev/api/class/1?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484162505751,
+			"name": "Listar Turma",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "b9ecfb58-86ca-0cbf-e13d-8d56e698531e",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"url": "engsoft.dev/api/student/69?token={{token}}&type=json",
@@ -1548,6 +1996,68 @@
 			"responses": []
 		},
 		{
+			"id": "bcf1eb55-7e1e-9654-d490-3c2e24a9ff8f",
+			"headers": "",
+			"url": "engsoft.dev/api/class?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "Tiago",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "surname",
+					"value": "Cardoso",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "ssn",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "birthdate",
+					"value": "NOW()",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gpa",
+					"value": "123123123",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "gender",
+					"value": "F",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484162491433,
+			"name": "Listar Turmas",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "bdb911e2-3583-785a-a2cb-fc65040c997d",
 			"headers": "",
 			"url": "engsoft.dev/api/student/70?token={{token}}&type=json",
@@ -1595,21 +2105,21 @@
 			"data": [
 				{
 					"key": "name",
-					"value": "Tiago",
+					"value": "Joaquim",
 					"type": "text",
 					"enabled": true,
 					"warning": ""
 				},
 				{
 					"key": "surname",
-					"value": "Cardoso",
+					"value": "Almeida",
 					"type": "text",
 					"enabled": true,
 					"warning": ""
 				},
 				{
 					"key": "ssn",
-					"value": "123123123",
+					"value": "3434",
 					"type": "text",
 					"enabled": true,
 					"warning": ""
@@ -1634,7 +2144,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1484001633083,
+			"time": 1484149910959,
 			"name": "Criar Estudante",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
@@ -1643,7 +2153,7 @@
 		{
 			"id": "d97fc098-8bc1-bb51-d6f4-e27bbff2b83c",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
-			"url": "engsoft.dev/api/room/22?token={{token}}&type=json",
+			"url": "engsoft.dev/api/room/21?token={{token}}&type=json",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "PUT",
@@ -1666,7 +2176,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1484001513041,
+			"time": 1484149911513,
 			"name": "Editar Sala",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
@@ -1878,6 +2388,25 @@
 			"responses": []
 		},
 		{
+			"id": "f0a96c66-c3c1-e852-4faf-9c097b542e64",
+			"headers": "",
+			"url": "engsoft.dev/api/discipline/31?token={{token}}&type=json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484160451578,
+			"name": "Remover Disciplina",
+			"description": "",
+			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",
+			"responses": []
+		},
+		{
 			"id": "f787fec4-6b48-8466-4a6e-79ff042c48e5",
 			"headers": "Content-Type: application/x-www-form-urlencoded\n",
 			"url": "engsoft.dev/api/course/22?token={{token}}&type=json",
@@ -1980,7 +2509,7 @@
 		{
 			"id": "f994545b-26fd-a9ec-8dda-3f86a13f8bf7",
 			"headers": "",
-			"url": "engsoft.dev/api/student/course/enroll?id=999&token={{token}}&type=json",
+			"url": "engsoft.dev/api/student/1/course/enroll?course_id=999&token={{token}}&type=json",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -1990,7 +2519,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1484001681877,
+			"time": 1484162704003,
 			"name": "Inscrever Aluno em Curso",
 			"description": "",
 			"collectionId": "e033b12b-e4a8-eb66-c882-d7f475595e1a",

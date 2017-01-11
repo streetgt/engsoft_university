@@ -1,5 +1,9 @@
 # Projeto - Engenharia de software
 
+* Ficheiro das Rotas disponivel em :
+    - ficheiro - routes.md;
+    - https://www.getpostman.com/collections/39dcdec5679be473f897 (mais detalhado);
+
 1. **Desenvolver um WS1 (Web Service) que permita aos estudantes:** 
 	1. inscreverem-se em cursos, atualizar os seus dados.
 		* ✔️
