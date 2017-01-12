@@ -8,12 +8,10 @@
         "php": ">=5.6.4",
         "laravel/lumen-framework": "5.3.*",
         "vlucas/phpdotenv": "~2.2",
-        "soapbox/laravel-formatter": "2.x",
-        "appzcoder/lumen-routes-list": "^1.0"
+        "soapbox/laravel-formatter": "2.x"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
-        "phpunit/phpunit": "~5.0",
         "mockery/mockery": "~0.9"
     },
     "autoload": {
@@ -23,7 +21,6 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/",
             "database/"
         ]
     },
