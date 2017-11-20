@@ -124,7 +124,7 @@ class ClassController extends Controller
         $class->delete();
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'Class removed with success!',
         ]);
     }

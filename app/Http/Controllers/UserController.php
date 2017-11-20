@@ -81,10 +81,17 @@ class UserController extends Controller
     {
         $user = $this->user->find($id);
 
+        if($user == null) {
+            return response()->json([
+                'status' => 404,
+                'message' => 'User not found!',
+            ]);
+        }
+
         $user->delete();
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'User removed with success!',
         ]);
     }

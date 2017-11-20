@@ -124,7 +124,7 @@ class ScheduleController extends Controller
         $schedule->delete();
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'Schedule removed with success!',
         ]);
     }

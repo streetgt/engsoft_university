@@ -105,7 +105,7 @@ class StudentController extends Controller
         $role->delete();
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'Student removed with success!',
         ]);
     }
@@ -207,14 +207,14 @@ class StudentController extends Controller
             $student->courses()->detach($course->id);
 
             return response()->json([
-                'status'  => 500,
+                'status'  => 200,
                 'message' => 'Student ' . $student->id . ' has been removed from course ' . $course->id,
             ]);
         } else {
             $student->courses()->attach($course->id);
 
             return response()->json([
-                'status'  => 500,
+                'status'  => 200,
                 'message' => 'Student ' . $student->id . ' has added to course ' . $course->id,
             ]);
         }
@@ -251,14 +251,14 @@ class StudentController extends Controller
             $student->classes()->detach($class->id);
 
             return response()->json([
-                'status'  => 500,
+                'status'  => 200,
                 'message' => 'Student ' . $student->id . ' has been removed from class ' . $class->id,
             ]);
         } else {
             $student->classes()->attach($class->id);
 
             return response()->json([
-                'status'  => 500,
+                'status'  => 200,
                 'message' => 'Student ' . $student->id . ' has added to class ' . $class->id,
             ]);
         }

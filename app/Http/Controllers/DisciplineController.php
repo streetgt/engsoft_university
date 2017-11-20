@@ -99,7 +99,7 @@ class DisciplineController extends Controller
         $discipline->delete();
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'Discipline removed with success!',
         ]);
     }
@@ -178,7 +178,7 @@ class DisciplineController extends Controller
         $discipline->courses()->attach($course->id);
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'Discipline ' . $discipline->id . ' associated with success to Course ' . $course->id,
         ]);
     }
@@ -220,7 +220,7 @@ class DisciplineController extends Controller
         $discipline->courses()->detach($course);
 
         return response()->json([
-            'status'  => 500,
+            'status'  => 200,
             'message' => 'Discipline ' . $discipline->id . ' disassociated with success from Course ' . $course->id,
         ]);
     }
